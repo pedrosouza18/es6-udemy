@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoisting</title>
+</head>
+<body>
+    <script>
+        
+        //Ele dará undefined, porém sabe que tem uma variável ali
+        console.log(cat);
+        var cat = 'cat';
+
+        //Usando let ou const ele dará um erro pois ele não faz o hoisting
+        console.log(dog);
+        console.log(pet);
+    
+        let dog = 'dog';
+        const pet = 'pet'
+
+    </script>
+</body>
+</html>

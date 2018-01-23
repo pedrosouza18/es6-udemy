@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Constantes</title>
+</head>
+<body>
+    <script>
+    
+        const secretNumber = 26;
+
+        const will = {
+            name: 'William',
+            age: 53
+        };
+
+        //Consigo alterar o valor de uma propriedade do objeto da constante mas não alterar a constante em si
+        will.age = 26;
+
+        console.log(will);
+        
+
+        const newObject = {
+            name: 'Pedro',
+            age: 21
+        };
+
+        //Método para congelar a constante para que ela fique imutável
+        Object.freeze(newObject);
+
+        newObject.age = 26;
+
+        console.log(newObject);
+        
+
+    </script>
+</body>
+</html>

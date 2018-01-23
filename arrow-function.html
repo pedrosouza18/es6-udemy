@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <script>
+        
+        const ireland = ['Dublin', 'Galway', 'Cork'];
+
+        const love = ireland.map(function(name){
+            return `I love ${name}`;
+        });
+
+        console.log(love);
+
+        const loveArrow = ireland.map((name) => {
+            return `I love ${name}`;
+        });
+
+        console.log(loveArrow);
+
+        const loveArrowSingle = ireland.map(nome => {
+            return `I love ${nome}`;
+        });
+
+        console.log(loveArrowSingle);
+        
+        const loveArrowOneLine = ireland.map(name => `I love ${name}`);
+
+        console.log(loveArrowOneLine);
+
+        const loveChain = ireland
+                            .filter(nome => nome === 'Dublin')
+                            .map(name => `I love ${name}`);
+
+        console.log(loveChain);
+        
+        
+        
+    </script>
+</body>
+</html>

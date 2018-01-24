@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This no Arrow Function</title>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <button id="btnSandwich">Make my sandwich</button>
+    <script>
+        
+        //Exibi o botão em si - this
+        // const btn = document.querySelector("#btn");
+        // btn.addEventListener("click", function(){
+        //     console.log(this);
+        // });
+        
+        //Nesse c aso ele exibi o contexto que nós estamos que no caso e a window - this
+        const btn = document.querySelector("#btn");
+        btn.addEventListener("click", () => {
+            console.log(this);
+        });
+
+        const sandwich = {
+            bread: 'white',
+            cheese: 'cheddar',
+
+            prepare:function () {
+                return `I want a sandwich with ${this.bread} bread and ${this.cheese}`;
+            },
+
+            //Se eu tivesse usando uma function normal e usado o this ele iria pear a window
+            make: function () {
+                window.setTimeout(() => {
+                    console.log(this.prepare());
+                }, 500);
+            }
+        }
+
+        const btnSandwich = document.querySelector("#btnSandwich");
+
+        btnSandwich.addEventListener("click", () => {
+            sandwich.make();
+        });
+    </script>
+</body>
+</html>

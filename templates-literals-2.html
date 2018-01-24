@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const article = {
+            title: 'Aprendendo Template Strings',
+            intro: 'Uma breve explicação de como utilizar templates strings do es6 em seu código hoje!',
+            body: `Lorem Ipsum é simplesmente uma simulação de texto da 
+            indústria tipográfica e de impressos, e vem sendo utilizado desde o 
+            século XVI, quando um impressor desconhecido pegou uma bandeja de 
+            tipos e os embaralhou para fazer um livro de modelos de tipos. 
+            Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto
+             para a editoração eletrônica, permanecendo essencialmente inalterado.`,
+            tags:['es6','js', 'template-literals'],
+            author: 'Pedro'
+        };
+
+        function renderAuthor(name) {
+            return (name) ? name : 'unknown'
+        }
+
+        //Markups dinamicos
+        //Metodo join() serve para juntar tudo
+        //Consigo chamar funções dentro do template strings
+        const markup = 
+            `
+            <article>
+                <header>
+                    <h1>${article.title}</h1>
+                </header>
+                <section>
+                    <p>${article.intro}</p>
+                </section>
+                <footer>
+                    <ul>
+                        ${article.tags.map((tag) => `<li>${tag}</li>`).join('')}
+                    </ul>
+                </footer>
+                <p>Author: ${renderAuthor(article.author)}</p>
+            </article>
+            `;
+
+        document.body.innerHTML = markup;
+    </script>
+</body>
+</html>

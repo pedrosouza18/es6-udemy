@@ -17,7 +17,7 @@
         //     console.log(this);
         // });
         
-        //Nesse c aso ele exibi o contexto que nós estamos que no caso e a window - this
+        //Nesse caso ele exibi o contexto que nós estamos que no caso e a window - this
         const btn = document.querySelector("#btn");
         btn.addEventListener("click", () => {
             console.log(this);
@@ -27,7 +27,7 @@
             bread: 'white',
             cheese: 'cheddar',
 
-            prepare:function () {
+            prepare: function () {
                 return `I want a sandwich with ${this.bread} bread and ${this.cheese}`;
             },
 

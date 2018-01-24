@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tagged template</title>
+</head>
+
+<style>
+    .green {
+        color: green;
+        font-size: 25px;
+    }
+</style>
+<body>
+    <script>
+        
+        const city = 'Dublin';
+        const something = 'Guinness';
+        const otherThing = 'Leprechaums'
+
+        //Função do tagged template
+        function green(template, ...values) {
+            return template.reduce((acumulator, item, i) => {
+                return `
+                    ${acumulator}
+                    <span class="green">${values[i -1].toUpperCase()}</span>
+                    ${item}
+                `
+            })
+        }
+
+        const ireland = green`I live in ${city} the city of ${something} and ${otherThing}`;
+
+        document.body.innerHTML = ireland;
+    </script>
+</body>
+</html>

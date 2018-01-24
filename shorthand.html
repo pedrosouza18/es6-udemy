@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shorthand properties</title>
+</head>
+<body>
+    <script>
+        
+        let firstName = 'Pedro';
+        let surName = 'Souza';
+        let age = 21;
+
+        //Sem shorthand
+        const person = {
+            firstName: firstName,
+            surName: surName,
+            age: age
+        };
+
+        console.log(person);
+
+        //Com shorthand
+        //Quando a variavel tem o mesmo nome da propriedade, com shorthand vc pode omitir o valor da propriedade e so deixar o da variavel
+        const person2 = {
+            firstName,
+            surName,
+            age
+        };
+
+        console.log(person2);
+
+        //Com shorthand voce consegue omitir o :function ao criar uma função dentro de um objeto
+        const teste = {
+            firstName,
+            surName,
+            age,
+
+            hello() {
+                console.log('hello');
+            }
+        }
+
+        teste.hello();
+        
+        
+        
+    </script>
+</body>
+</html>

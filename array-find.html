@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array find e findindex</title>
+</head>
+<body>
+    <script>
+        
+        const data = [
+            {
+                nome: 'Pedro',
+                idade: 21,
+                cidade: 'Rio de Janeiro'
+            },
+            {
+                nome: 'Rafaela',
+                idade: 22,
+                cidade: 'Rio de Janeiro'
+            }
+        ];
+
+        const simpleArray = [4, -5 , 0, -1];
+        //Nesse caso voce passa uma equação para ele conseguir procurar
+        const undeZero = simpleArray.find(x => x < 0);
+        console.log(undeZero);
+
+        //Esse mostra o indice enquanto o outro mostra o valor
+        const undeZeroIndex = simpleArray.findIndex(x => x < 0);
+        console.log(undeZeroIndex);
+
+        const pedro = data.find(pessoa => pessoa.nome === 'Pedro');
+        console.log(pedro);
+        
+        const pedroIndex = data.findIndex(pessoa => pessoa.nome === 'Pedro');
+        console.log(pedroIndex);
+    </script>
+</body>
+</html>

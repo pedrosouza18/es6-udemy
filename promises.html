@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Criando uma promise
+        var defer = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(true){
+                    resolve('Hello! It works');
+                } else {
+                    reject('Error!');
+                }
+            }, 2000);
+        });
+
+        //Para usar a promise
+        defer
+            .then((data) => {
+                console.log(data);
+            });
+
+        //Usando mais de um metodo na promise
+
+        defer
+            .then((data) => {
+                console.log(data);
+                return 'foo';
+            })
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => console.log(error));
+    </script>
+</body>
+</html>

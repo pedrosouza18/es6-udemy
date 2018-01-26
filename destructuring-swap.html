@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Nova forma de fazer swap de variaveis
+
+        let a = 42;
+        let b = 21;
+
+        console.log('a: ' , a);
+        console.log('b: ' , b);
+
+        //Sem o destructuring swap, para trocar o valor de a e b
+        let temp;
+        temp = a;
+        a = b;
+        b = temp;
+
+        //Com destructuring swap
+        let c = 42;
+        let d = 21;
+
+        //Na ordem dos valores que voce quer
+        [c, d] = [d, c];
+        
+        console.log('c: ', c);
+        console.log('d: ', d);
+    </script>
+</body>
+</html>

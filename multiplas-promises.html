@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const currency = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({currency: 'Euro', value: 3.50});
+            }, 2000);
+        });
+
+        const countries = new Promise((resolve, reject) => {
+            resolve(['Ireland', 'England', 'Scotland']);
+        });
+
+        //Metodo para rodar todas as promises e so retornar o resultado quando todas estiverem concluidas
+        Promise
+            .all([currency, countries])
+            .then(response => response.map((res) => console.log(res)));
+
+        //Metodo race joga o resultado a promise mais rapida
+        Promise
+            .race([currency, countries])
+            .then(data => console.log(data));
+    </script>
+</body>
+</html>

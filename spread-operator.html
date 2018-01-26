@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let front = ['react', 'vue', 'angular'];
+        let back = ['pyton', 'ruby', 'nodejs'];
+
+        //O spread operator serve para voce desmenbrar elementos iteraveis, como array e strings
+        
+        //Nesse caso torna a string em um array
+        console.log([...'pedro']);
+
+        //Nesse caso mostra a string separada
+        console.log(...'pedro');
+
+        //Mostra os elementos do array
+        console.log(...front);
+        
+        //Mostra os elementos dentro do array
+        console.log([...front]);
+
+        //Concatenar arrays
+        let fullstack = [...front, ...back];
+        console.log(fullstack);
+        
+        //Para inserir valores com os arrays concatenados
+        let fullstack2 = [...front, 'NodeJs' ,...back];
+        console.log(fullstack2);
+        
+    </script>
+</body>
+</html>

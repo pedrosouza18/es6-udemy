@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button class="botao">Incrementar</button>
+    <span class="painel"><span>  
+    <script>
+        //Symbol e um tipo primitivo, unico e imutavel
+        let foo = Symbol('name');
+        let bar = Symbol('name');
+
+        console.log(foo === bar);
+        
+        let obj = {
+            [Symbol('name')]: 'Pedro',
+            [Symbol('age')]: 21,
+            city: 'Rio de Janeiro'
+        };
+
+        //Se eu der um console log nesse objeto so irá existir uma chave
+
+        const symbols = Object.getOwnPropertySymbols(obj);
+        console.log(symbols);
+
+        const data = symbols.map(syn => obj[syn]);
+
+        console.log(data);
+        
+        //O symbol é um tipo de dado único e imutável e pode ser usado como um identificador para propriedades de objeto
+        //symbol evita colisão de de nomes
+
+
+        //Criando uma clousure para evitar que as variaveis fiquem em escopo global.
+        (() => {
+            const $ = document.querySelector.bind(document);
+            const btn = $('.botao');
+            const painel = $('.painel');
+
+            //Criando um symbol para uma variavel unica
+            const identificadorUnico = Symbol();
+            painel[identificadorUnico] = 0;
+
+            btn.addEventListener("click", () => {
+                painel[identificadorUnico]++;
+                painel.textContent = painel[identificadorUnico];
+            });
+        })();
+
+    </script>
+</body>
+</html>

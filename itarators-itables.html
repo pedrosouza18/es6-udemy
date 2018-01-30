@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Iterator e o que a gente usa para iterar
+        //Itarable e o elemento iteravel
+
+        let text = 'Pedro';
+
+        //Criando um iterator
+        let it = text[Symbol.iterator]();
+
+        //Usando o for of para iterar sobre essa string com mais poder
+        for(letter of text){
+            console.log(letter);
+        }
+
+        //Com esse for of eu consigo fazer algumas coisas como dar break quando chegar no elemento que eu quero
+        for(letra of text){
+            console.log(letra);
+            if(letra === 'r') break;
+        }
+    </script>
+</body>
+</html>

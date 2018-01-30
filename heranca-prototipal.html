@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Classe
+        function Animal(kind, sound) {
+            //constructor
+            this.kind = kind;
+            this.sound = sound;
+        }
+
+        //Tudo vem de prototype
+        //Nesse caso voce esta adicionando esse metodo ao prototype de Animal, todos tem uma herança
+        Animal.prototype.hello = function () {
+            console.log(`${this.sound} I'm a ${this.kind}`);
+        }
+
+        const dog = new Animal('dog', 'auau');
+        const cat = new Animal('cat', 'miau');
+    </script>
+</body>
+</html>

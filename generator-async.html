@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Função de requisição ajax
+        function ajax(url) {
+            fetch(url)
+                .then(data => data.json())
+                //Nessa parte estou chamando o generator e passando o data para ele iterar sobre todos os elementos do generator
+                .then(data => dados.next(data));
+        };
+
+        //Criando o generator
+        function* ajaxGen() {
+            console.log('Buscando posts ...');
+            const posts = yield ajax('https://willianjusten.com.br/search.json');
+            console.log(posts);
+
+            console.log('Buscando dados github ...');
+            const github = yield ajax('https://api.github.com/users/pedrosouza18');
+            console.log(github);       
+        };
+
+        //Jogando o resultado do generator em uma constante
+        const dados = ajaxGen();
+
+        //Chamando o generator
+        dados.next();
+    </script>
+</body>
+</html>

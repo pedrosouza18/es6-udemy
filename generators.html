@@ -20,6 +20,70 @@
 
         //Para chama-lo precisa do metodo next
         console.log(nomes.next());
+
+        const mylist = {};
+
+        mylist[Symbol.iterator] = function* () {
+            yield 'Pedro';
+            yield 'Rafaela';
+        };
+
+        for(list of mylist){
+            console.log(list);
+        }
+
+        /*Temos também como usar o yield* para nos referenciarmos a outro generator.
+         Neste caso, este yield só será “resolvido” quando o generator apontado por ele estiver em done: true, 
+         ou seja, quando ele tiver passado por todos os seus passos.*/
+         function* subTopics() { 
+            yield "B1"; 
+            yield "B2"; 
+            yield "B3"; 
+        }
+
+        function* topics() { 
+            yield "A"; 
+            yield "B"; 
+            yield* subTopics(); 
+            yield "C"; 
+        }
+
+        var iterator = topics();
+
+        console.log(iterator.next()); // { value: "A", done: false } 
+        console.log(iterator.next()); // { value: "B", done: false } 
+        console.log(iterator.next()); // { value: "B1", done: false } 
+        console.log(iterator.next()); // { value: "B2", done: false } 
+        console.log(iterator.next()); // { value: "B3", done: false } 
+        console.log(iterator.next()); // { value: "C", done: false } 
+        console.log(iterator.next()); // { value: undefined, done: true }
+
+
+        //O “Q” da questão aqui é que podemos utilizar o *yield** para generators, mas também para objetos iteráveis!
+        function* topico() { yield* [1, 2, 3]; }
+
+        var iterato = topico();
+        
+
+        console.log(iterator.next()); // { value: 1, done: false } 
+        console.log(iterator.next()); // { value: 2, done: false } 
+        console.log(iterator.next()); // { value: 3, done: false } 
+        console.log(iterator.next()); // { value: undefined, done: true }
+
+        //Ou até mesmo em strings:
+        function* topics() { 
+            yield* "felipe"; 
+        }
+
+        var iterator = topics();
+
+        console.log(iterator.next()); // { value: "f", done: false } 
+        console.log(iterator.next()); // { value: "e", done: false } 
+        console.log(iterator.next()); // { value: "l", done: false } 
+        console.log(iterator.next()); // { value: "i", done: false } 
+        console.log(iterator.next()); // { value: "p", done: false } 
+        console.log(iterator.next()); // { value: "e", done: false } 
+        console.log(iterator.next()); // { value: undefined, done: true }
         
     </script>
 </body>

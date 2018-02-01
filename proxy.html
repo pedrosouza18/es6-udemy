@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<htm>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*O objeto Proxy é usado para definir comportamentos customizados para operações 
+        fundamentais (por exemplo, pesquisa de propriedade, atribuição, 
+        enumeração, invocação de função, etc.).*/
+        let obj = {
+            name: 'Pedro',
+            age: 21
+        };
+
+        //Criando um proxy
+        let proxy = new Proxy(obj, {
+            get(target, name){
+                console.log('Alguem está pedindo o nome =)');
+                return target[name];
+            },
+            set(target, name, value){
+                console.log('Alterando o nome');
+                target[name] = value;
+            }
+        });
+
+        console.log(proxy.name);
+        proxy.name = 'Rafaela';
+        console.log(proxy.name);
+        
+    </script>
+</body>
+</html>

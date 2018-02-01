@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //weakmap e a mesma coisa que o map, porem ele so aceita objetos
+
+        let obj1 = {
+            name: 'Pedro',
+            age: 21
+        };
+
+        let obj2 = {
+            name: 'Rafaela',
+            age: 20
+        };
+
+        let wm = new WeakMap();
+
+        //Se adiciona o objeto primeiro e depois a descrição
+        wm.set(obj1, 'Info do Pedro');
+        wm.set(obj2, 'Info da Rafaela');
+
+    </script>
+</body>
+</html>

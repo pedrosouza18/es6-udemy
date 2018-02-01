@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Set so guarda valores unicos, sem repetição e ele e um iterator
+
+        let mySet = new Set(['Pedro', 'Rafaela', 'Valéria']);
+
+        let newSet = new Set([
+            {
+                id:1,
+                name: 'Pedro',
+                age: 21
+            },
+            {
+                id:2,
+                name: 'Rafaela',
+                age: 20
+            }
+        ]);
+
+        console.log(newSet);
+        
+        let itSet = newSet.values();
+        console.log(itSet);
+        
+        mySet.add('José');
+        mySet.add('teste');
+        mySet.delete('teste');
+
+        //Verifica se existe esse elemento
+        console.log(mySet.has('Pedro'));
+
+        //Guardando os valores em uma variavel
+        let it = mySet.values();
+
+        //Consigo usar o for of pois ele e um iterator
+        for(name of mySet){
+            console.log(name);
+        }
+
+        for(obj of itSet){
+            console.log(obj);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        //map e a mesma coisa que set mas se usa no formato de chave e valor
+        let m = new Map();
+
+        m.set('nomePedro', 'Pedro');
+        m.set('nomeRafaela', 'Rafaela');
+        m.set('nomeTeste', 'Teste');
+
+        console.log(m);
+
+        let it = m.values();
+
+        for(value of it){
+            console.log(value);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Weakset so guarda objetos e tem algumas peculiaridaes em relação ao set
+
+        let obj1 = {
+            name: 'Pedro',
+            age: 21
+        };
+
+        let obj2 = {
+            name: 'Rafaela',
+            age: 20
+        };
+
+        //Mas ele não e um iterator
+        let ws = new WeakSet([obj1, obj2]);
+    </script>
+</body>
+</html>
